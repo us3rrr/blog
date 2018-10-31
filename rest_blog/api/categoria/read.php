@@ -11,7 +11,10 @@
 
     $categoria = new Categoria($con);
 
+
+//SE NAO FOR ENVIADO UM ID POR GET, read()
     $resultado = $categoria->read();
+//SE FOR ENVIADO UM ID POR GET, read($id)    
 
     $qtde_cats = sizeof($resultado);
 

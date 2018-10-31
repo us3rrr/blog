@@ -47,6 +47,14 @@ class Post {
 		return $resultado;
 	}
 
+	public function readByCat($idcat) {
+		$consulta = "SELECT * FROM post WHERE id_categoria = :id_categoria";
+		$stmt = $this->conexao->prepare($consulta);
+		$stmt = $this-> bindParam('id_categoria', $idcat);
+		$stmt->execute();
+		$resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $resultado;
+	}
 	public function update() {
 		$consulta = "UPDATE post SET titulo = :titulo, texto = :texto,
 		id_categoria = :id_categoria, autor = :autor, dt_criacao = :dt_criacao WHERE id = :id";

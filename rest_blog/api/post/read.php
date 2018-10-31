@@ -11,8 +11,11 @@
 
     $post = new Post($con);
 
+//SE NAO FOI ENVIADO ID POR GET,  read()
     $resultado = $post->read();
+//SE FOI ENVIADO ID DE POST POR GET, read($id)
 
+//SE FOI ENVIADO ID DE CATEGORIA POR GET, readByCat($idcat)    
     $qtde_cats = sizeof($resultado);
 
     if($qtde_cats>0){

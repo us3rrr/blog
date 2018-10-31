@@ -35,7 +35,7 @@ class Categoria {
 		} else {
 			$consulta = "SELECT * FROM categoria WHERE id = :id";
 			$stmt = $this->conexao->prepare($consulta);
-			$stmt = $this-> bindParam('id', $id);
+			$stmt->bindParam('id', $id);
 		}
 		$stmt->execute();
 		$resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
