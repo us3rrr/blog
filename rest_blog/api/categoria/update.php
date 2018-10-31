@@ -16,9 +16,9 @@
         $categoria->id = $dados->id;
         $categoria->nome = $dados->nome;
         $categoria->descricao = $dados->descricao;
-
+        echo $categoria->update();
         if($categoria->update()) {
-        	$res = array('mensagem','Categoria atualiza');
+        	$res = array('mensagem','Categoria atualizada');
         } else {
         	$res = array('mensagem','Erro na atualização da categoria');
         }

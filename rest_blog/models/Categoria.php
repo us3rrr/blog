@@ -17,14 +17,14 @@ class Categoria {
 	/* O método read() deverá efetuar uma consulta SQL na tabela categoria, e retornar o resultado */
 
 	public function create() {
-		$consulta = "INSERT INTO categoria(nome, descricao) VALUES (:nome, :descricao)";
+		$consulta = "INSERT INTO categoria (nome, descricao) VALUES (:nome, :descricao)";
 		$stmt = $this->conexao->prepare($consulta);
 		$stmt->bindParam('nome', $this->nome, PDO::PARAM_STR);
 		$stmt->bindParam('descricao', $this->descricao, PDO::PARAM_STR);
-		if ($stmt->execute()) {
-			return "true";
-		} else {
-			return "false";
+		try{
+			return $stmt->execute();
+		}catch(Exception $e){
+			echo 'Erro '.$e->getMessage();
 		}
 	}
 
@@ -49,6 +49,10 @@ class Categoria {
 		$stmt->bindParam('nome', $this->nome, PDO::PARAM_STR);
 		$stmt->bindParam('descricao', $this->descricao, PDO::PARAM_STR);
 		$stmt->execute();
+
+		return $stmt->execute();
+
+
 	}
 
 	public function delete() {

@@ -1,5 +1,5 @@
 <?php
-	header('Content-Type: application/json, charset=utf-8');
+	header('Content-Type: application/json');
 	
 	require_once '../../config/Conexao.php';
 	require_once '../../models/Categoria.php';
@@ -14,9 +14,9 @@
         $categoria->descricao = $dados->descricao;
 
         if($categoria->create()) {
-        	$res = array('mensagem','Categoria criada');
+        	$res = array('mensagem' => 'Categoria criada');
         } else {
-        	$res = array('mensagem','Erro na criação da categoria');
+        	$res = array('mensagem' => 'Erro na criação da categoria');
         }
         echo json_encode($res);
     }

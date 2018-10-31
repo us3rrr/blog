@@ -21,4 +21,5 @@
         	$res = array('Mensagem: ','Erro na criação da publicação');
         }
         echo json_encode($res);
+    
     }

@@ -18,7 +18,7 @@
         if($categoria->delete()) {
         	$res = ['mensagem'=>'Categoria deletada'];
         } else {
-        	$res = ['mensagem'=>'Erro, não foi possível deletar categoria'];
+        	$res = ['mensagem'=>'Erro na deleção da categoria'];
         }
     	echo json_encode($res);   
     }
