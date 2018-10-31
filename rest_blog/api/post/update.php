@@ -16,9 +16,7 @@
         $post->id = $dados->id;
         $post->titulo = $dados->titulo;
         $post->texto = $dados->texto;
-        $post->id_categoria = $dados->id_categoria;
         $post->autor = $dados->autor;
-        $post->dt_criacao = $dados->autor;
 
         if($post->update()) {
         	$res = array('mensagem','Post atualiza');
